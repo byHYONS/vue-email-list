@@ -17,17 +17,23 @@ const app = createApp({
     },
     methods: {
         apiCall(){
-            axios.get(this.url).then(response => {
+           return axios.get(this.url).then(response => {
                 console.log(response.data.response);
                 return response.data.response;
             });
-            console.log(this.apiCall);
             
-        }   
+        },
+        runApiCall() {
+            for (let i=0; i<10; i++){
+                this.emails[i] = this.apiCall()[i]
+            }
+        }  
         
     },
+    
     created() {
-        this.apiCall()
+        this.runApiCall()
+        
     },
 });
 
