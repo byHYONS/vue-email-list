@@ -11,3 +11,30 @@
             common
 ----------------------------- */
 
+main {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ccc;
+    text-align: center;
+    align-content: center;
+}
+
+.content {
+    margin: auto;
+    padding: 25px;
+    background-color: #fff;
+    width: 55%;
+    border-radius: 15px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);  
+}
+
+h1 {
+    margin-bottom: 25px;
+    color: #292525;
+}
+
+li {
+    list-style: none;
+    padding: 8px;
+}
+

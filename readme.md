@@ -37,4 +37,13 @@ for (let i=0; i<10; i++){
 }                
 ```
 
-6. 
+6. nell'html eseguo net tag `li` un `v-for` per stampere tutto l'array `emails`:
+```
+<li v-for="(email, index) in emails" :key="`${email}-index`">
+        {{ email }}
+</li>
+```
+
+7. do un po' di stile alla pagina.
+
+##### FINE
