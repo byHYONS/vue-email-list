@@ -19,12 +19,17 @@ const app = createApp({
         apiCall(){
             axios.get(this.url).then(response => {
                 console.log(response.data.response);
-            })
-        }
+                return response.data.response;
+            });
+            console.log(this.apiCall);
+            
+        }   
+        
     },
     created() {
-        this.apiCall();
+        this.apiCall()
     },
 });
 
 app.mount('#app');
+
