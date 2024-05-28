@@ -12,7 +12,9 @@
         <div id="app" v-cloak class="content">
             <h1>{{test}}</h1>
             <ul>
-                <li></li>
+                <li v-for="(email, index) in emails" :key="`${email}-index`">
+                    {{email}}
+                </li>
             </ul>
         </div>
     </main>

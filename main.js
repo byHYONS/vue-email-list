@@ -16,24 +16,26 @@ const app = createApp({
         }
     },
     methods: {
-        apiCall(){
+        apiCall(){  // funzione per chiamata api con axios
            return axios.get(this.url).then(response => {
                 console.log(response.data.response);
                 return response.data.response;
             });
             
         },
-        runApiCall() {
+        runApiCall() { // itero per 10 volte la chiamata
             for (let i=0; i<10; i++){
-                this.emails[i] = this.apiCall()[i]
+                this.apiCall().then(email => { //? quando ho una "promise" devo riappendere il .then()
+                    this.emails[i] = email
+                    console.log(email);
+                })
             }
         }  
         
     },
     
     created() {
-        this.runApiCall()
-        
+        this.runApiCall()         
     },
 });
 
