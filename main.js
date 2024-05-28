@@ -16,18 +16,20 @@ const app = createApp({
         }
     },
     methods: {
-        apiCall(){                              // funzione per chiamata api con axios
-           return axios.get(this.url)           // return della chiamata axios
-           .then(response => {
-                console.log(response.data.response);
-                return response.data.response;  // altro return del metodo then
-            });
+        // funzione per chiamata api con axios
+        apiCall(){                              
+           return axios.get(this.url)               //? return della chiamata axios
+        //    .then(response => {
+        //         console.log(response.data.response);
+        //         return response.data.response;   //? altro return del metodo/funzione .then()
+        //     });
             
         },
-        runApiCall() { // itero per 10 volte la chiamata
+        // funzione per iterare 10 volte la chiamata:
+        runApiCall() { 
             for (let i=0; i<10; i++){
-                this.apiCall().then(email => {  //? quando ho una "promise" devo riappendere il .then()
-                    this.emails[i] = email
+                this.apiCall().then(email => {      //? quando ho una "promise" devo riappendere il .then()
+                    this.emails[i] = email.data.response
                     console.log(email);
                 })
             }
