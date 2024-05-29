@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-[v-cloak] {display: block;}
+[v-cloak] {display: none;}
 
 /* -----------------------------
             common
